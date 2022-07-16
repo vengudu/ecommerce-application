@@ -1,5 +1,6 @@
 package sg.gov.caas.ecommerce.application.service.impl;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sg.gov.caas.ecommerce.application.entity.Product;
@@ -19,6 +20,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> searchProducts(String query) {
         List<Product> products = productRepository.searchProducts(query);
+        System.out.println("query --------->"+query);
+        System.out.println("products ----------------->"+products);
         return products;
     }
 }
